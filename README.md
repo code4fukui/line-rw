@@ -27,6 +27,13 @@ for (;;) {
 r.close();
 ```
 
+## test
+
+```bash
+cd test
+deno test -A
+```
+
 ## blog
 
 [Deno用 ファイル行単位読み書きライブラリ](https://fukuno.jig.jp/3281)

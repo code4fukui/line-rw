@@ -10,9 +10,12 @@ class LineWriter {
       throw new Error("closed");
     }
     if (!this.f) {
-      this.f = await Deno.open(this.fn,  { write: true, create: true, truncate: true });
+      this.f = await Deno.open(this.fn, {
+        write: true,
+        create: true,
+        truncate: true,
+      });
     }
-    console.log("line", line)
     await this.f.write(this.textencoder.encode(line + "\n"));
   }
   close() {

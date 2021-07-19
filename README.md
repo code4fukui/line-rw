@@ -1,6 +1,7 @@
 # line-rw
 
-Deno用 ファイルの行単位読み書きライブラリ
+- Deno用 ファイルの行単位読み書きライブラリ
+- File line-by-line read/write library for Deno 
 
 ```js
 import { LineWriter } from "https://code4fukui.github.io/line-rw/LineWriter.js";

@@ -2,7 +2,7 @@
 
 Deno用 ファイルの行単位読み書きライブラリ
 
-```
+```js
 import { LineWriter } from "https://code4fukui.github.io/line-rw/LineWriter.js";
 
 const w = new LineWriter("test.txt");
@@ -12,7 +12,7 @@ await w.writeLine("def");
 w.close();
 ```
 
-```
+```js
 import { LineReader } from "https://code4fukui.github.io/line-rw/LineReader.js";
 
 const r = new LineReader("test.txt");
@@ -25,3 +25,7 @@ for (;;) {
 }
 r.close();
 ```
+
+## blog
+
+[Deno用 ファイル行単位読み書きライブラリ](https://fukuno.jig.jp/3281)

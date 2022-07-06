@@ -1,8 +1,8 @@
 class LineWriter {
-  constructor(fn) {
+  constructor(fn, encoder) {
     this.f = null;
     this.fn = fn;
-    this.textencoder = new TextEncoder();
+    this.textencoder = encoder || new TextEncoder();
     this.eof = false;
   }
   async writeLine(line) {

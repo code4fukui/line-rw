@@ -2,7 +2,7 @@
 const BUF_SIZE = 1024 * 16; // default Deno 1.12.0
 
 class LineReader {
-  constructor(fn) {
+  constructor(fn, decoder) {
     this.fn = fn;
     this.f = null;
     this.bufsize = BUF_SIZE;
@@ -11,7 +11,7 @@ class LineReader {
     this.idx = 0;
     this.len = 0;
     this.eof = false;
-    this.decoder = new TextDecoder();
+    this.decoder = decoder || new TextDecoder();
     this.readcnt = 0;
     this.fillcnt = 0;
   }

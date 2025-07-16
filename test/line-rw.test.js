@@ -21,3 +21,29 @@ Deno.test("test2", async () => {
     "name,value\nabc,123\ndef,456\n",
   );
 });
+Deno.test("append", async () => {
+  try {
+    await Deno.remove("test_append.csv");
+  } catch (e) {
+  }
+  const append = true;
+  const w = new LineWriter("test_append.csv", null, append);
+  await w.writeLine("name,value");
+  await w.writeLine("abc,123");
+  w.close();
+  const w2 = new LineWriter("test_append.csv", null, append);
+  await w2.writeLine("def,456");
+  w2.close();
+
+  const r = new LineReader("test_append.csv");
+  t.assertEquals(await r.readLine(), "name,value");
+  t.assertEquals(await r.readLine(), "abc,123");
+  t.assertEquals(await r.readLine(), "def,456");
+  t.assertEquals(await r.readLine(), null);
+  r.close();
+
+  t.assertEquals(
+    await Deno.readTextFile("test_append.csv"),
+    "name,value\nabc,123\ndef,456\n",
+  );
+});

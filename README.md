@@ -13,6 +13,13 @@ await w.writeLine("def");
 w.close();
 ```
 
+if append mode
+```js
+const encoder = new TextEncoder(); // or null
+const append = true;
+const w = new LineWriter("test.txt", encoder, append);
+```
+
 ```js
 import { LineReader } from "https://code4fukui.github.io/line-rw/LineReader.js";
 

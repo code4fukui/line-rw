@@ -1,8 +1,8 @@
 import * as t from "https://deno.land/std/testing/asserts.ts";
-import { LineWriter } from "../LineWriter.js";
 import { LineReader } from "../LineReader.js";
-import { TextDecoderSJIS } from "https://js.sabae.cc/TextDecoderSJIS.js";
-import { TextEncoderSJIS } from "https://js.sabae.cc/TextEncoderSJIS.js";
+import { TextDecoderSJIS } from "https://code4sabae.github.io/js/TextDecoderSJIS.js";
+//import { LineWriter } from "../LineWriter.js";
+//import { TextEncoderSJIS } from "https://code4sabae.github.io/js/TextEncoderSJIS.js";
 
 Deno.test("test", async () => {
   /*

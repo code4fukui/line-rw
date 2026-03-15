@@ -1,6 +1,8 @@
 # line-rw
 
-File line-by-line read/write library for [Deno](https://deno.land/).
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
+A file line-by-line read/write library for [Deno](https://deno.land/).
 
 ## Features
 - Provides `LineReader` and `LineWriter` classes for reading and writing files line-by-line

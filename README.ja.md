@@ -1,18 +1,15 @@
 # line-rw
 
-Denoで使える、ファイルの行単位読み書きライブラリです。
+Denoで使えるファイルの行単位読み書きライブラリです。
 
 ## 機能
-- ファイルの行単位での読み書き
-- 追記モードでの書き込み
+- `LineReader`と`LineWriter`クラスを提供し、ファイルの行単位での読み書きができます
+- テキストモードとバイナリモードの両方に対応しています
+- 大容量ファイルにも対応するため、バッチ処理で読み書きを行います
+- ファイルI/Oの一般的な操作を簡単に行えるAPIを提供しています
 
 ## 使い方
-インストール:
-```
-https://code4fukui.github.io/line-rw/
-```
-
-書き込み例:
+### ファイルへの書き込み
 ```js
 import { LineWriter } from "https://code4fukui.github.io/line-rw/LineWriter.js";
 
@@ -23,7 +20,14 @@ await w.writeLine("def");
 w.close();
 ```
 
-読み込み例:
+ファイルへの追記:
+```js
+const encoder = new TextEncoder(); // or null
+const append = true;
+const w = new LineWriter("test.txt", encoder, append);
+```
+
+### ファイルからの読み込み
 ```js
 import { LineReader } from "https://code4fukui.github.io/line-rw/LineReader.js";
 

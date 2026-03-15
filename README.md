@@ -1,8 +1,16 @@
 # line-rw
 
-- Deno用 ファイルの行単位読み書きライブラリ
-- File line-by-line read/write library for [Deno](https://deno.land/)
+File line-by-line read/write library for [Deno](https://deno.land/).
 
+## Features
+- Provides `LineReader` and `LineWriter` classes for reading and writing files line-by-line
+- Supports reading and writing files in both text and binary modes
+- Handles large files by reading and writing in batches
+- Provides an easy-to-use API for common file I/O operations
+
+## Usage
+
+### Writing to a file
 ```js
 import { LineWriter } from "https://code4fukui.github.io/line-rw/LineWriter.js";
 
@@ -13,13 +21,14 @@ await w.writeLine("def");
 w.close();
 ```
 
-if append mode
+To append to a file:
 ```js
 const encoder = new TextEncoder(); // or null
 const append = true;
 const w = new LineWriter("test.txt", encoder, append);
 ```
 
+### Reading from a file
 ```js
 import { LineReader } from "https://code4fukui.github.io/line-rw/LineReader.js";
 
@@ -34,13 +43,11 @@ for (;;) {
 r.close();
 ```
 
-## test
-
+## Testing
 ```bash
 cd test
 deno test -A
 ```
 
-## blog
-
-[Deno用 ファイル行単位読み書きライブラリ](https://fukuno.jig.jp/3281)
+## License
+MIT License
